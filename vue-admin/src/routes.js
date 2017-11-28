@@ -9,6 +9,10 @@ import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
+import part1Hello from './views/part1/Hello.vue'
+import part1HelloWorld from './views/part1/HelloWorld.vue'
+import moveStar from './views/part2/moveStar.vue'
+import canvasClock from './views/part2/canvasClock.vue'
 
 let routes = [
     {
@@ -63,6 +67,26 @@ let routes = [
         iconCls: 'fa fa-bar-chart',
         children: [
             { path: '/echarts', component: echarts, name: 'echarts' }
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
+        name:'part1',
+        iconCls: 'el-icon-search',
+        children: [
+            { path: '/part1HelloWorld', component: part1HelloWorld, name: 'HelloWorld' },
+            { path: '/part1Hello', component: part1Hello, name: 'Hello' }
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
+        name:'part2',
+        iconCls: 'el-icon-star-on',
+        children: [
+            { path: '/canvasClock', component: canvasClock, name: 'canvasClock' },
+            { path: '/moveStar', component: moveStar, name: 'moveStar' }
         ]
     },
     {
