@@ -9,6 +9,8 @@ import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
+import part1 from './views/part1.vue'
+import part2 from './views/part2.vue'
 import part1Hello from './views/part1/Hello.vue'
 import part1HelloWorld from './views/part1/HelloWorld.vue'
 import moveStar from './views/part2/moveStar.vue'
@@ -63,6 +65,25 @@ let routes = [
     {
         path: '/',
         component: Home,
+        name: '导航四',
+        iconCls: 'fa fa-address-card',
+        children: [
+            {
+                path: '/part1',
+                component: part1,
+                name: '分组1'
+            },
+            {
+                path: '/part2',
+                component: part2
+                ,
+                name: '分组2'
+            }
+        ]
+    },
+    {
+        path: '/',
+        component: Home,
         name: 'Charts',
         iconCls: 'fa fa-bar-chart',
         children: [
@@ -75,8 +96,8 @@ let routes = [
         name:'part1',
         iconCls: 'el-icon-search',
         children: [
-            { path: '/part1HelloWorld', component: part1HelloWorld, name: 'HelloWorld' },
-            { path: '/part1Hello', component: part1Hello, name: 'Hello' }
+            { path: '/part1/HelloWorld', component: part1HelloWorld, name: 'HelloWorld' },
+            { path: '/part1/Hello', component: part1Hello, name: 'Hello' }
         ]
     },
     {
@@ -85,8 +106,8 @@ let routes = [
         name:'part2',
         iconCls: 'el-icon-star-on',
         children: [
-            { path: '/canvasClock', component: canvasClock, name: 'canvasClock' },
-            { path: '/moveStar', component: moveStar, name: 'moveStar' }
+            { path: '/part2/canvasClock', component: canvasClock, name: 'canvasClock' },
+            { path: '/part2/moveStar', component: moveStar, name: 'moveStar' }
         ]
     },
     {
